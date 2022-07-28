@@ -110,6 +110,8 @@ def leitura_dados_dts():
     return duration_list, temperaturas
 
 
+# def leitura_dados_lv():
+#     pass
+
 # if __name__ == '__main__':
-#     duracoes, temperaturas = leitura_dados()
-#     print(duracoes, temperaturas)
+#     leitura_dados_lv()
