@@ -1,5 +1,5 @@
 import numpy as np
-from LeituraDados import leitura_dados
+from LeituraDadosDTS import leitura_dados
 from GerarEixos import gerar_eixos
 from GerarGrafico import gerar_grafico
 
