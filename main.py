@@ -1,11 +1,11 @@
 import numpy as np
-from LeituraDadosDTS import leitura_dados
+from LeituraDadosDTS import leitura_dados_dts
 from GerarEixos import gerar_eixos
 from GerarGrafico import gerar_grafico
 
 
 def main():
-    duracoes, temperaturas = leitura_dados()
+    duracoes, temperaturas = leitura_dados_dts()
 
     # legendas em pontos específicos (durações)
     # pos = np.concatenate(([0], np.cumsum(duracoes)))

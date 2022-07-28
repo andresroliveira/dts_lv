@@ -23,7 +23,7 @@ def cleanMT(origin, LM, LT):
         LT.append(float(c[1]))
 
 
-def leitura_dados():
+def leitura_dados_dts():
     # duration_list = [
     #     '00:05:00', '00:07:00', '00:05:00', '00:05:00', '00:05:00', '00:05:00',
     #     '00:05:00', '00:05:00', '00:07:00', '00:05:00', '00:07:00'
