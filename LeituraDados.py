@@ -23,7 +23,7 @@ def cleanMT(origin, LM, LT):
         LT.append(float(c[1]))
 
 
-def leitura_dados_dts():
+def leitura_dados_dts(ini=6, fim=7):
     # duration_list = [
     #     '00:05:00', '00:07:00', '00:05:00', '00:05:00', '00:05:00', '00:05:00',
     #     '00:05:00', '00:05:00', '00:07:00', '00:05:00', '00:07:00'
@@ -34,7 +34,7 @@ def leitura_dados_dts():
     #     31.64301, 32, 31.64301, 32.852642, 31.64301, 32.852642
     # ]
 
-    mypath = '.'
+    mypath = 'logs/'
 
     a = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     b = []
@@ -57,7 +57,7 @@ def leitura_dados_dts():
 
         #-----------------------------------
         #Abertura do log
-        with open(st0, encoding='iso-8859-1') as f:
+        with open(mypath + st0, encoding='iso-8859-1') as f:
             lines = f.readlines()
 
         #-----------------------------------
@@ -91,8 +91,8 @@ def leitura_dados_dts():
 
         #-----------------------------------
         #determina o range de espaço
-        ini = 6
-        fim = 7
+        # ini = 6
+        # fim = 7
         # section
         lista_sM = []
         lista_sT = []
