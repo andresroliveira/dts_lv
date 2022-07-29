@@ -110,8 +110,8 @@ def leitura_dados_dts():
     return duration_list, temperaturas
 
 
-# def leitura_dados_lv():
-#     pass
+def leitura_dados_lv(t: np.ndarray):
+    T_cont = 30 - 10 * np.sin(2 * np.pi * t / 500)
+    pres = np.cos(2 * np.pi * t / 871) + 4.5
 
-# if __name__ == '__main__':
-#     leitura_dados_lv()
+    return T_cont, pres

@@ -1,5 +1,5 @@
 import numpy as np
-from LeituraDados import leitura_dados_dts
+from LeituraDados import *
 from GerarEixos import gerar_eixos
 from GerarGrafico import gerar_grafico
 
@@ -16,8 +16,10 @@ def main():
     # 10 legendas igualmente espaçadas
     pos = np.linspace(0, np.sum(duracoes), 10)
 
-    t, T = gerar_eixos(duracoes, temperaturas)
-    gerar_grafico(t, T, pos)
+    t, T_step = gerar_eixos(duracoes, temperaturas)
+    T_cont, pres = leitura_dados_lv(t)
+
+    gerar_grafico(t, T_step, T_cont, pres, pos)
 
 
 if __name__ == '__main__':

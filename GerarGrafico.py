@@ -1,18 +1,27 @@
+from cProfile import label
 import matplotlib.pyplot as plt
 import numpy as np
 import time
 
 
-def gerar_grafico(t, T, pos):
+def gerar_grafico(t, T_step, T_cont, pres, pos):
+    fig, ax1 = plt.subplots(figsize=(16, 9))
+    ax2 = ax1.twinx()
 
-    plt.figure(figsize=(16, 9))
-    plt.plot(t, T)
+    ax1.plot(t, T_step, color='b', label='T_step')
+    ax1.plot(t, T_cont, color='r', label='T_cont')
+    ax2.plot(t, pres, color='g', label='pres')
 
-    plt.xlabel('Tempo')
-    plt.ylabel('Temperatura (°C)')
-    plt.title('DTS - Temperatura por Tempo')
+    ax1.set_xlabel('Tempo')
+
+    ax1.set_ylabel('Temperatura (°C)', color='tab:purple')
+    ax2.set_ylabel('Pressão(bar)', color='tab:green')
+
+    fig.suptitle('DTS & LV')
 
     legend = [time.strftime('%H:%M:%S', time.gmtime(ti)) for ti in pos]
-    plt.xticks(pos, labels=legend, rotation=45)
-    plt.grid()
+    ax1.set_xticks(pos, labels=legend, rotation=45)
+    ax1.grid()
+    ax1.legend(loc='upper left')
+    ax2.legend(loc='upper right')
     plt.show()
